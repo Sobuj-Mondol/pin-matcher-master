@@ -6,7 +6,7 @@ function getPin(){
         return pin;
     }
     else{
-        console.log('recheck',pin);
+        // console.log('recheck',pin);
         return getPin();
     }
 }
@@ -31,3 +31,18 @@ document.getElementById('key-pad').addEventListener('click',function(event){
         console.log(number);
     }
 });
+
+function verifyPin(){
+    let pin = document.getElementById('Display-pin').value;
+    let typeNumber = document.getElementById('typed-numbers').value;
+    let successNotifation = document.getElementById('notify-success');
+    let failError = document.getElementById('notify-fail');
+    if(pin == typeNumber){
+        failError.style.display = 'none';
+        successNotifation.style.display = 'block';
+    }
+    else{
+        successNotifation.style.display = 'none';
+        failError.style.display = 'block';
+    }
+}
